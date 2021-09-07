@@ -83,7 +83,7 @@ const config = [
   ["prowadzić", "lead", "led", "led"],
   ["obudzić", "wake", "woke", "woken"],
   ["pozwolić", "let", "let", "let"],
-  ["rozlać", "spill", "split", "spilt"],
+  ["rozlać", "spill", "spilt", "spilt"],
   ["pachnieć", "smell", "smelt", "smelt"],
   ["palić, parzyć, płonąć", "burn", "burned", "burned"],
   ["kopać (np. w ziemi)", "dig", "dug", "dug"],
