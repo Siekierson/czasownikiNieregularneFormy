@@ -7,7 +7,7 @@ const config = [
   ["przynieść", "bring", "brought", "brought"],
   ["budować", "build", "built", "built"],
   ["kupować", "buy", "bought", "bought"],
-  ["spalić", "burn", "burnt", "bunrt"],
+  ["spalić", "burn", "burnt", "burnt"],
   ["złapać", "catch", "caught", "caught"],
   ["wybrać", "choose", "chose", "chosen"],
   ["przyjść", "come", "came", "come"],
