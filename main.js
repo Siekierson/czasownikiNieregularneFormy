@@ -29,7 +29,7 @@ inputs[0].focus();
 for (let i = 0; i < inputs.length; i++) {
   let incorrect = 0;
   inputs[i].addEventListener("change", (e) => {
-    if (e.target.value === actual[i + 1]) {
+    if (e.target.value.toLowerCase() === actual[i + 1]) {
       results[i] = true;
       ifcorrect[i].textContent = "Correct";
       ifcorrect[i].style.color = "lightgreen";
