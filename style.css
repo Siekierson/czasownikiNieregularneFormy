@@ -5,11 +5,21 @@
   padding: 0;
   margin: 0;
   text-align: center;
-  margin-top: 10px;
 }
 input {
   font-size: 30px;
 }
 #search {
   margin-top: 5vh;
+}
+nav {
+  width: 100vw;
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  background-image: linear-gradient(black 60%, rgba(0, 0, 0, 0) 100%);
+}
+a {
+  color: white;
+  text-decoration: none;
 }

@@ -30,7 +30,6 @@ input.addEventListener("change", (e) => {
   if (InnerLower === actual[1] || InnerLower === actual[2]) {
     results[random] += 1;
     input.value = "";
-
     loop();
   }
 });
