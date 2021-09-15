@@ -1,4 +1,4 @@
-import config from "./config.js";
+import config from "../../data/irregular.js";
 import { searcher } from "./searcher.js";
 
 const inputs = document.querySelectorAll(".form>input");
@@ -50,5 +50,4 @@ for (let i = 0; i < inputs.length; i++) {
     }
   });
 }
-
 searcher(config);
