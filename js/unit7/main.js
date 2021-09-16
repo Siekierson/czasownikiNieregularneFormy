@@ -1,10 +1,13 @@
 import config from "../../data/unit7.js";
 
-const results = [2, 2, 2, 2, 2, 2, 2, 1, 2, 1];
-// config.forEach((item, index) => (results[index] = 0));
+// const results = [2, 2, 2, 2, 2, 2, 2, 1, 2, 1];
+const results = [];
+config.forEach((item, index) => (results[index] = 0));
 
 const h2 = document.querySelector("h2");
 const answerInput = document.getElementById("answer");
+const hint = document.getElementById("hint");
+const hintText = document.querySelector("h3");
 let random;
 let actual;
 // Math.max.apply(null, results)
@@ -35,6 +38,17 @@ answerInput.addEventListener("change", (e) => {
   ) {
     results[random] += 1;
     answerInput.value = "";
+    hintText.innerHTML = "";
     loop();
   }
+});
+hint.addEventListener("click", (e) => {
+  const or = " lub ";
+  hintText.innerHTML = `${actual[1]} ${
+    actual[2] !== undefined
+      ? actual[3] !== undefined
+        ? " lub " + actual[2] + " lub " + actual[3]
+        : " lub " + actual[2]
+      : ""
+  }`;
 });
