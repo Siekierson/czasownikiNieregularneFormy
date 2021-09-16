@@ -4,7 +4,7 @@ const results = [2, 2, 2, 2, 2, 2, 2, 1, 2, 1];
 // config.forEach((item, index) => (results[index] = 0));
 
 const h2 = document.querySelector("h2");
-const input = document.querySelector("input");
+const answerInput = document.getElementById("answer");
 let random;
 let actual;
 // Math.max.apply(null, results)
@@ -21,15 +21,20 @@ const loop = () => {
   random = a;
   actual = config[random];
   h2.textContent = actual[0];
+  // console.log(actual);
 };
-input.focus();
+answerInput.focus();
 
 loop();
-input.addEventListener("change", (e) => {
+answerInput.addEventListener("change", (e) => {
   const InnerLower = e.target.value.toLowerCase();
-  if (InnerLower === actual[1] || InnerLower === actual[2]) {
+  if (
+    InnerLower === actual[1] ||
+    InnerLower === actual[2] ||
+    InnerLower === actual[3]
+  ) {
     results[random] += 1;
-    input.value = "";
+    answerInput.value = "";
     loop();
   }
 });
