@@ -184,7 +184,7 @@ const config = [
   ["targować się", "haggle"],
   ["płacić", "pay"],
   ["honorować karty kredytowe", "accept credit cards", "take credit cards"],
-  ["be broke", "be broke"],
+  ["być spłukanym", "be broke"],
   ["kosztować fortunę", "cost a bomb"],
   ["wprowadzić numer PIN", "enter your PIN"],
   ["wypłacić pieniądze z bankomatu", "get money out of a cash machine"],
