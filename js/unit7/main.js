@@ -20,6 +20,12 @@ const statsButton = document.getElementById("stats");
 const statsContent = document.querySelector(".stats");
 let random;
 let actual;
+let statsDisplay = false;
+let resultProgress = 0;
+
+results.forEach((item) => {
+  if (item === Math.max.apply(null, results)) resultProgress += 1;
+});
 // Math.max.apply(null, results)
 const randomize = () => Math.floor(Math.random() * config.length);
 const notKnownIndex = () => {
@@ -29,12 +35,13 @@ const notKnownIndex = () => {
   }
   return index;
 };
+
 const loop = () => {
   const a = notKnownIndex();
   random = a;
   actual = config[random];
   h2.textContent = actual[0];
-  console.log(results);
+  // console.log(results);
   localStorage.setItem("result", JSON.stringify(results));
 };
 answerInput.focus();
@@ -51,6 +58,8 @@ answerInput.addEventListener("change", (e) => {
     answerInput.value = "";
     hintText.innerHTML = "";
     loop();
+
+    resultProgress += 1;
   }
 });
 hint.addEventListener("click", (e) => {
@@ -64,4 +73,9 @@ hint.addEventListener("click", (e) => {
   }`;
 });
 
-statsButton.addEventListener("click", () => {});
+statsButton.addEventListener("click", () => {
+  statsContent.style.display = statsDisplay ? "block" : "none";
+  statsDisplay = !statsDisplay;
+
+  statsContent.innerHTML = `<h4>Ilość wpisanych słówek w turze:${resultProgress}/${results.length}</h4>`;
+});
