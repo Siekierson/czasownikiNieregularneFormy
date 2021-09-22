@@ -1,6 +1,7 @@
 // import config from "../../data/irregular.js";
 import { searcher } from "./searcher.js";
-export const irregular = (config) => {
+// config=data    type=(true=eng, false=ger)
+export const irregular = (config, type) => {
   const inputs = document.querySelectorAll(".form>input");
   const polish = document.getElementById("Polish");
   const streakInfo = document.getElementById("streak");
@@ -15,7 +16,7 @@ export const irregular = (config) => {
   let results;
 
   const loop = () => {
-    results = [false, false, false];
+    results = type ? [false, false, false] : [false, false];
     random = randomize();
     actual = config[random];
     polish.textContent = actual[0];
@@ -33,7 +34,7 @@ export const irregular = (config) => {
         results[i] = true;
         ifcorrect[i].textContent = "Correct";
         ifcorrect[i].style.color = "lightgreen";
-        if (i < 2) inputs[i + 1].focus();
+        if (i < (type ? 2 : 1)) inputs[i + 1].focus();
         if (!results.includes(false)) {
           inputs.forEach((item) => (item.value = ""));
           inputs[0].focus();
