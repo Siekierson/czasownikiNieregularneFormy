@@ -28,7 +28,7 @@ const config = [
   ["sklep należący do sieci handlowej", "independent shop"],
   ["jubiler", "jeweller's"],
   ["rynek", "market"],
-  ["rynek na którym handlują okoliczni rolnicy", "farmers' market"],
+  ["rynek na którym handlują okoliczni rolnicy", "farmer's market"],
   ["sklep muzyczny", "music shop"],
   ["kiosk", "newsagent's"],
   ["monopolowy", "off-licence"],

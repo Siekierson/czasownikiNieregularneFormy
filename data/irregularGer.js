@@ -18,7 +18,7 @@ const config = [
   ["dawać", "geben", "gab"],
   ["podobać się", "gefallen", "gefiel"],
   ["zaczynać", "beginnen", "begunn"],
-  ["zdecydować się", "sich entscheiden", "sich entchied"],
+  ["zdecydować się", "sich entscheiden", "sich entschied"],
   ["ukończyć", "abschlieBen", "schloss ab"],
   ["być", "sein", "war"],
 ];

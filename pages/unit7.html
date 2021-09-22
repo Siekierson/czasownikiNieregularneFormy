@@ -20,6 +20,10 @@
     <br />
     <button id="stats">Statystyki</button>
     <div class="stats"></div>
-    <script type="module" src="/js/unit7/main.js"></script>
+    <script type="module">
+      import config from "/data/unit7.js";
+      import { units } from "/js/units/main.js";
+      units(config);
+    </script>
   </body>
 </html>
