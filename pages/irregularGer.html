@@ -4,20 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-DDBN5BZ56C"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-DDBN5BZ56C");
-    </script>
     <link rel="stylesheet" href="/dist/style.css" />
   </head>
   <body>
@@ -30,7 +17,7 @@
     </h1>
     <div id="main">
       <div>
-        <h1>Polish:</h1>
+        <h1>Polski:</h1>
         <h2 id="Polish"></h2>
       </div>
       <div class="form">
@@ -55,12 +42,12 @@
       <div class="result"></div>
     </div>
     <!-- <script src="/js/irregular/searcher.js"></script> -->
-    <!-- <script src="/data/irregular.js"></script>
-    <script type="module" src="/js/irregular/main.js"></script> -->
+    <!-- <script src="/data/irregular.js"></script> -->
     <script type="module">
-      import config from "/data/irregular.js";
+      import config from "/data/irregularGer.js";
       import { irregular } from "/js/irregular/main.js";
       irregular(config);
     </script>
+    <!-- <script type="module" src="/js/irregular/main.js"></script> -->
   </body>
 </html>
