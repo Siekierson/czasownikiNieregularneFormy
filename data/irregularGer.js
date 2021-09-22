@@ -1,6 +1,5 @@
 // ["polish", "first", "scnd", "third"], json model
 const config = [
-  
   ["zdarzyć się", "passieren", "passierte"],
   ["szukać", "suchen", "suchte"],
   ["zrezygnować", "verzichten", "verzichtete"],
@@ -19,7 +18,7 @@ const config = [
   ["dawać", "geben", "gab"],
   ["podobać się", "gefallen", "gefiel"],
   ["zaczynać", "beginnen", "begunn"],
-  ["zdecydować się", "sich eutscheiden", "eutschied"],
+  ["zdecydować się", "sich entscheiden", "sich entchied"],
   ["ukończyć", "abschlieBen", "schloss ab"],
   ["być", "sein", "war"],
 ];
