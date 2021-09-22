@@ -21,5 +21,11 @@ const config = [
   ["zdecydować się", "sich entscheiden", "sich entschied"],
   ["ukończyć", "abschlieBen", "schloss ab"],
   ["być", "sein", "war"],
+  ["przeciwstawiać się", "durchsetzen", "setze durch"],
+  ["opłacić się", "sich lohnen", "lohnte"],
+  ["robić", "machen", "machte"],
+  ["interesować się", "sich interessieren", "interessiete"],
+  ["pracować", "arbeiten", "arbeitete"],
+  ["założyć", "grunden", "grundete"],
 ];
 export default config;
