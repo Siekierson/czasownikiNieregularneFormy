@@ -33,11 +33,15 @@
     <h3></h3>
     <br />
     <button id="stats">Statystyki</button>
-    <div class="stats"></div>
+    <div class="stats">
+      <h4></h4>
+      <button>Usuń postęp</button>
+    </div>
+
     <script type="module">
       import config from "/data/unit8.js";
       import { units } from "/js/units/main.js";
-      units(config);
+      units(config, 8);
     </script>
   </body>
 </html>

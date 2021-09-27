@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DDBN5BZ56C"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/96f4a3a3c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DDBN5BZ56C");
+    </script>
+    <link rel="stylesheet" href="/dist/style.css" />
+    <title>unit7</title>
+  </head>
+  <body class="learning">
+    <nav>
+      <a href="/index.html">go back</a>
+    </nav>
+    <div class="tile">
+      <h3 class="eng">english form</h3>
+      <div class="strip"></div>
+      <h3 class="pl">polish form</h3>
+    </div>
+    <div class="buttons">
+      <button><i class="fas fa-redo-alt"></i></button
+      ><button><i class="fas fa-check"></i></button>
+    </div>
+    <script type="module">
+      import config from "/data/unit8.js";
+      import { learning } from "/js/units/learning.js";
+      learning(config, 8);
+    </script>
+  </body>
+</html>

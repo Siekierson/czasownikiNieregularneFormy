@@ -1,0 +1,50 @@
+.learning {
+  text-align: center;
+  .tile {
+    margin: 10px auto;
+    box-sizing: border-box;
+    width: 340px;
+    height: 480px;
+    background: linear-gradient(180deg, #cacaca 0%, #6b6b6b 100%);
+    border-radius: 26px;
+    overflow: hidden;
+    h3 {
+      box-sizing: border-box;
+      display: inline-block;
+      text-align: left;
+      font-size: 1.7rem;
+      height: 45%;
+      width: 100%;
+      padding: 30px;
+    }
+    .strip {
+      height: 3px;
+      width: 85%;
+      margin-left: 20px;
+      background-color: #777;
+    }
+  }
+  .buttons {
+    margin: auto;
+    display: flex;
+    width: 340px;
+    justify-content: space-between;
+    button {
+      height: 80px;
+      width: 80px;
+      border-radius: 20px;
+      background-color: rgb(168, 168, 168);
+      border: 2px solid royalblue;
+      i {
+        font-size: 2rem;
+        color: royalblue;
+      }
+      &:last-of-type {
+        border-color: rgb(48, 175, 48);
+        i {
+          color: rgb(48, 175, 48);
+        }
+      }
+    }
+  }
+}

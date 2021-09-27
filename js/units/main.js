@@ -1,16 +1,11 @@
-export const units = (config) => {
-  // const results = [2, 2, 2, 2, 2, 2, 2, 1, 2, 1];
-  const lsResult = JSON.parse(localStorage.getItem("result"));
-  // console.log(lsResult);
-  // const results = lsResult !== undefined ? [lsResult] : [];
-  // if (results.length === 0) {
-  //   config.forEach((item, index) => (results[index] = 0));
-  // }
+export const units = (config, unitNumber) => {
+  const localResultName = `result${unitNumber}`;
+  const lsResult = JSON.parse(localStorage.getItem(localResultName));
+
   const results = lsResult !== null ? lsResult : [];
   if (results.length === 0) {
     config.forEach((item, index) => (results[index] = 0));
   }
-
   const h2 = document.querySelector("h2");
   const answerInput = document.getElementById("answer");
   const hint = document.getElementById("hint");
@@ -23,6 +18,7 @@ export const units = (config) => {
   let resultProgress = 0;
 
   results.forEach((item) => {
+    if (Math.max.apply(null, results) === 0) return;
     if (item === Math.max.apply(null, results)) resultProgress += 1;
   });
   // Math.max.apply(null, results)
@@ -34,18 +30,23 @@ export const units = (config) => {
     }
     return index;
   };
-
+  function changeProgressInfo() {
+    statsContent.children[0].textContent = `Ilość wpisanych słówek w turze:${resultProgress}/${results.length}`;
+  }
   const loop = () => {
     const a = notKnownIndex();
     random = a;
     actual = config[random];
     h2.textContent = actual[0];
-    // console.log(results);
-    localStorage.setItem("result", JSON.stringify(results));
+    console.log(resultProgress);
+    localStorage.setItem(localResultName, JSON.stringify(results));
+    changeProgressInfo();
   };
   answerInput.focus();
 
   loop();
+
+  //input service || check if correct
   answerInput.addEventListener("change", (e) => {
     const InnerLower = e.target.value.toLowerCase();
     if (
@@ -53,29 +54,36 @@ export const units = (config) => {
       InnerLower === actual[2].toLowerCase() ||
       InnerLower === actual[3].toLowerCase()
     ) {
+      resultProgress += 1;
       results[random] += 1;
       answerInput.value = "";
       hintText.innerHTML = "";
       loop();
-
-      resultProgress += 1;
     }
   });
+
+  //show hint
   hint.addEventListener("click", (e) => {
     const or = " lub ";
     hintText.innerHTML = `${actual[1]} ${
       actual[2] !== undefined
         ? actual[3] !== undefined
-          ? " lub " + actual[2] + " lub " + actual[3]
-          : " lub " + actual[2]
+          ? or + actual[2] + or + actual[3]
+          : or + actual[2]
         : ""
     }`;
   });
 
+  //remove progress in localstorage
+  statsContent.children[1].addEventListener("click", () => {
+    localStorage.removeItem(localResultName);
+    resultProgress = 0;
+    changeProgressInfo();
+  });
+
+  //show stats section
   statsButton.addEventListener("click", () => {
     statsContent.style.display = statsDisplay ? "block" : "none";
     statsDisplay = !statsDisplay;
-
-    statsContent.innerHTML = `<h4>Ilość wpisanych słówek w turze:${resultProgress}/${results.length}</h4>`;
   });
 };

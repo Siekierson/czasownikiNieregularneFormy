@@ -5,23 +5,24 @@
   padding: 0;
   margin: 0;
   text-align: center;
+  transition: 0.3s;
 }
 input {
   font-size: 30px;
   background-color: transparent;
-  border: 2px solid black;
+  border: 1px solid black;
   padding: 5px 10px;
   border-radius: 10px;
   outline: none;
   transition: 0.3s;
   &:focus {
-    box-shadow: 0 0 3pt 2pt rgb(0, 0, 0);
+    box-shadow: 0 0 3px 2px rgb(75, 75, 75);
   }
 }
 body {
   width: 100vw;
   min-height: 100vh;
-  background-color: #777;
+  background-color: #888;
 }
 #search {
   margin-top: 5vh;
@@ -31,7 +32,7 @@ nav {
   margin: 0;
   padding-top: 15px;
   padding-bottom: 20px;
-  background-image: linear-gradient(black 60%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(rgb(29, 29, 29) 60%, rgba(0, 0, 0, 0) 100%);
 }
 a {
   color: white;
