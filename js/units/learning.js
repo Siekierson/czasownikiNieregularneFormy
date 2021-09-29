@@ -13,37 +13,47 @@ export const learning = (config, unitNumber) => {
     document.body.appendChild(item.element);
     item.element.classList.add("copy");
   });
-  console.log(tileCopy);
+
   let progress = 0;
   const loop = () => {
+    prevButton.style.display = progress === 0 ? "none" : "block";
     engH3.textContent = config[progress][1];
     plH3.textContent = config[progress][0];
     tileCopy.forEach((item) => {
-      item.element.childNodes[1].textContent = config[progress][1];
-      item.element.childNodes[5].textContent = config[progress][0];
+      const prev = progress === 0 ? 0 : progress - 1;
+      item.element.childNodes[1].textContent = config[prev][1];
+      item.element.childNodes[5].textContent = config[prev][0];
     });
-    prevButton.style.display = progress === 0 ? "none" : "block";
   };
   loop();
-  function changeTileStatus(tileIndex) {
-    tileCopy[tileIndex].isRunning = true;
-    tileCopy[tileIndex].element.classList.add("playAnimation");
+  function changeTileStatus(tileIndex, variant) {
+    const choosenTile = tileCopy[tileIndex];
+    choosenTile.isRunning = true;
+    choosenTile.element.classList.add(`${variant}Animation`);
+    choosenTile.element.childNodes[7].childNodes[1].style.display =
+      progress === 0 ? "none" : "block";
     setTimeout(() => {
-      tileCopy[tileIndex].isRunning = false;
-      tileCopy[tileIndex].element.classList.remove("playAnimation");
+      choosenTile.isRunning = false;
+      choosenTile.element.classList.remove(`${variant}Animation`);
     }, 1500);
+  }
+  function getNotActiveTile(variant) {
+    if (!tileCopy[0].isRunning) changeTileStatus(0, variant);
+    else if (!tileCopy[1].isRunning) changeTileStatus(1, variant);
+    else if (!tileCopy[2].isRunning) changeTileStatus(2, variant);
+    else if (!tileCopy[3].isRunning) changeTileStatus(3, variant);
+    else changeTileStatus(4, variant);
   }
   nextButton.addEventListener("click", () => {
     progress += 1;
-    if (!tileCopy[0].isRunning) changeTileStatus(0);
-    else if (!tileCopy[1].isRunning) changeTileStatus(1);
-    else if (!tileCopy[2].isRunning) changeTileStatus(2);
-    else if (!tileCopy[3].isRunning) changeTileStatus(3);
-    else changeTileStatus(4);
+    getNotActiveTile("next");
     loop();
   });
   prevButton.addEventListener("click", () => {
     progress -= 1;
-    loop();
+    getNotActiveTile("prev");
+    setTimeout(() => {
+      loop();
+    }, 1500);
   });
 };
