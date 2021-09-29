@@ -1,0 +1,8 @@
+@keyframes moveTile {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: rotate(70deg) translate(150%, -150%);
+  }
+}

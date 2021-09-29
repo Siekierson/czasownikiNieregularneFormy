@@ -1,16 +1,37 @@
+@keyframes moveTile {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    z-index: 99;
+    transform: rotate(70deg) translate(150%, -150%);
+  }
+}
+
 .learning {
   text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  .playAnimation {
+    animation: moveTile 1.5s;
+  }
+  .copy {
+    z-index: -1;
+  }
   .tile {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    width: 340px;
+    width: 80%;
+    max-width: 350px;
     height: 600px;
     background: linear-gradient(180deg, #cacaca 0%, #6b6b6b 100%);
     border-radius: 26px;
     overflow: hidden;
+    transition: 0s;
+
     h3 {
       box-sizing: border-box;
       display: inline-block;
@@ -19,6 +40,7 @@
       height: 40%;
       width: 100%;
       padding: 30px;
+      user-select: none;
     }
     .strip {
       height: 3px;
