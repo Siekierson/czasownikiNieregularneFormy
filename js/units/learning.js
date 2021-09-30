@@ -11,6 +11,7 @@ export const learning = (config, unitNumber) => {
   tileCopy.forEach((item) => {
     // item.element = tile.cloneNode(true);
     document.body.appendChild(item.element);
+
     item.element.classList.add("copy");
   });
 
@@ -32,10 +33,13 @@ export const learning = (config, unitNumber) => {
     choosenTile.element.classList.add(`${variant}Animation`);
     choosenTile.element.childNodes[7].childNodes[1].style.display =
       progress === 0 ? "none" : "block";
-    setTimeout(() => {
-      choosenTile.isRunning = false;
-      choosenTile.element.classList.remove(`${variant}Animation`);
-    }, 1500);
+    setTimeout(
+      () => {
+        choosenTile.isRunning = false;
+        choosenTile.element.classList.remove(`${variant}Animation`);
+      },
+      variant === "prev" ? 1000 : 1500
+    );
   }
   function getNotActiveTile(variant) {
     if (!tileCopy[0].isRunning) changeTileStatus(0, variant);
@@ -51,9 +55,11 @@ export const learning = (config, unitNumber) => {
   });
   prevButton.addEventListener("click", () => {
     progress -= 1;
+    prevButton.disabled = true;
     getNotActiveTile("prev");
     setTimeout(() => {
+      prevButton.disabled = false;
       loop();
-    }, 1500);
+    }, 1000);
   });
 };
