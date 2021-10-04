@@ -274,7 +274,7 @@ const config = [
   ["mieć słabość do słodyczy", "have a sweet thoot"],
   ["mieć apetyt", "have an appetite"],
   ["o wysokiej zawartości czegoś", "high in sth"],
-  ["utrzymywać niską wagę", "utrzymywać niską wagę"],
+  ["utrzymywać niską wagę", "keep one's weight lose"],
   ["tracić na wadze", "lose weight"],
   ["o niskiej zawartości czegoś", "low in sth"],
   ["przybierać na wadze", "put on weight"],
