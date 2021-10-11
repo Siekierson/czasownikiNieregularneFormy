@@ -2,6 +2,7 @@
   text-align: center;
   height: 100vh;
   overflow: hidden;
+  color: #464646;
   .nextAnimation {
     animation: nextTile 1.5s;
   }
@@ -20,7 +21,7 @@
     width: 80%;
     max-width: 350px;
     height: 600px;
-    background: linear-gradient(180deg, #cacaca 0%, #6b6b6b 100%);
+    background: linear-gradient(180deg, #e6e8e6 0%, #9fb8ad 100%);
     border-radius: 26px;
     overflow: hidden;
     transition: 0s;
@@ -36,10 +37,10 @@
       user-select: none;
     }
     .strip {
-      height: 3px;
+      height: 2px;
       width: 85%;
       margin-left: 20px;
-      background-color: #777;
+      background-color: #464646;
     }
     .buttons {
       margin: auto;
@@ -50,10 +51,10 @@
         height: 80px;
         width: 80px;
         border-radius: 20px;
-        background-color: rgb(168, 168, 168);
+        background-color: transparent;
         border: 2px solid royalblue;
         i {
-          font-size: 2rem;
+          font-size: 2.5rem;
           color: royalblue;
         }
         &:last-of-type {
