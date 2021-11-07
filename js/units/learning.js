@@ -17,7 +17,7 @@ export const learning = (config, unitNumber) => {
 
   let progress = 0;
   const loop = () => {
-    if (progress === config.length) progress = 0;
+    if (progress === config.length ) progress = 0;
     prevButton.style.display = progress === 0 ? "none" : "block";
     engH3.textContent = config[progress][1];
     plH3.textContent = config[progress][0];

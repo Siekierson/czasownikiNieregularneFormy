@@ -9,10 +9,6 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-DDBN5BZ56C"
     ></script>
-    <script
-      src="https://kit.fontawesome.com/96f4a3a3c9.js"
-      crossorigin="anonymous"
-    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -23,27 +19,29 @@
       gtag("config", "G-DDBN5BZ56C");
     </script>
     <link rel="stylesheet" href="/dist/style.css" />
-    <title>unit8</title>
+    <title>unit9</title>
   </head>
-  <body class="learning">
+  <body>
     <nav>
       <a href="/index.html">go back</a>
     </nav>
-    <div class="tile">
-      <h3 class="eng">english form</h3>
-      <div class="strip"></div>
-      <h3 class="pl">polish form</h3>
-      <div class="buttons">
-        <button class="prev"><i class="fas fa-redo-alt"></i></button
-        ><button class="next"><i class="fas fa-check"></i></button>
-      </div>
+    <h1>unit 9</h1>
+    <h2></h2>
+    <input type="text" id="answer" />
+    <br />
+    <button id="hint">Wskazówka</button>
+    <h3></h3>
+    <br />
+    <button id="stats">Statystyki</button>
+    <div class="stats">
+      <h4></h4>
+      <button>Usuń postęp</button>
     </div>
 
     <script type="module">
-      import config from "/data/unit8.js";
-      import { learning } from "/js/units/learning.js";
-
-      learning(config, 8);
+      import config from "/data/unit9.js";
+      import { units } from "/js/units/main.js";
+      units(config, 9);
     </script>
   </body>
 </html>
