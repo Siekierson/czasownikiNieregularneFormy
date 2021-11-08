@@ -63,7 +63,7 @@ export const units = (config, unitNumber) => {
   });
 
   //show hint
-  hint.addEventListener("click", (e) => {
+  function showHint() {
     const or = " lub ";
     hintText.innerHTML = `${actual[1]} ${
       actual[2] !== undefined
@@ -72,8 +72,11 @@ export const units = (config, unitNumber) => {
           : or + actual[2]
         : ""
     }`;
+  }
+  hint.addEventListener("click", showHint);
+  document.addEventListener("keypress", (e) => {
+    if (e.key === "9") showHint();
   });
-
   //remove progress in localstorage
   statsContent.children[1].addEventListener("click", () => {
     localStorage.removeItem(localResultName);
